@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="tr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Örnekler &mdash; ShortestPath2220674052 0.1.4 belgelendirmesi</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6861fbf"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=b0f24d8d"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="Sürüm Geçmişi" href="changelog.html" />
+    <link rel="prev" title="API Referansı" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ShortestPath2220674052
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Belgeleri arayın" aria-label="Belgeleri arayın" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">İçindekiler:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Kurulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Kullanım</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Referansı</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Örnekler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kampus-ornegi">Kampüs Örneği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ilceler-ornegi">İlçeler Örneği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loglama-ornegi">Loglama Örneği</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Sürüm Geçmişi</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ShortestPath2220674052</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Örnekler</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/examples.rst.txt" rel="nofollow"> Sayfa kaynağını görüntüle</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ornekler">
+<h1>Örnekler<a class="headerlink" href="#ornekler" title="Link to this heading"></a></h1>
+<p>Bu bölümde paketin kullanımına dair detaylı örnekler bulabilirsiniz.</p>
+<section id="kampus-ornegi">
+<h2>Kampüs Örneği<a class="headerlink" href="#kampus-ornegi" title="Link to this heading"></a></h2>
+<p>Bu örnekte, bir kampüs içindeki noktalar arasında en kısa yolu bulacağız.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">shortestpath2220674052.shortestpath</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_edges</span><span class="p">,</span> <span class="n">read_nodes</span><span class="p">,</span> <span class="n">create_graph_from_edges</span><span class="p">,</span> <span class="n">get_shortest_path</span><span class="p">,</span> <span class="n">visualize_graph</span>
+
+<span class="c1"># Dosya yolları</span>
+<span class="n">edges_file</span> <span class="o">=</span> <span class="s2">&quot;data/test/edges.csv&quot;</span>
+<span class="n">nodes_file</span> <span class="o">=</span> <span class="s2">&quot;data/test/nodes.csv&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Verileri oku</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">read_edges</span><span class="p">(</span><span class="n">edges_file</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">read_nodes</span><span class="p">(</span><span class="n">nodes_file</span><span class="p">)</span>
+
+    <span class="c1"># Graf oluştur</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">create_graph_from_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+    <span class="c1"># Spor Merkezi&#39;nden (A) Jeomatik Mühendisliği&#39;ne (G)</span>
+    <span class="n">start_node</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+    <span class="n">end_node</span> <span class="o">=</span> <span class="s2">&quot;G&quot;</span>
+
+    <span class="c1"># En kısa yolu bul</span>
+    <span class="n">path</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">get_shortest_path</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">,</span> <span class="n">end_node</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">and</span> <span class="n">distance</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Spor Merkezi&#39;nden Jeomatik Mühendisliği&#39;ne en kısa yol:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rota: </span><span class="si">{</span><span class="s1">&#39; -&gt; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toplam mesafe: </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2"> metre&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Rota üzerindeki lokasyonların isimlerini göster</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rota üzerindeki noktalar:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Grafı görselleştir</span>
+        <span class="n">visualize_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yol bulunamadı!&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hata: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ilceler-ornegi">
+<h2>İlçeler Örneği<a class="headerlink" href="#ilceler-ornegi" title="Link to this heading"></a></h2>
+<p>Bu örnekte, Adana ilçeleri arasında en kısa yolu bulacağız.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">shortestpath2220674052.shortestpath</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_edges</span><span class="p">,</span> <span class="n">read_nodes</span><span class="p">,</span> <span class="n">create_graph_from_edges</span><span class="p">,</span> <span class="n">get_shortest_path</span><span class="p">,</span> <span class="n">visualize_graph</span>
+
+<span class="c1"># Dosya yolları</span>
+<span class="n">edges_file</span> <span class="o">=</span> <span class="s2">&quot;data/production/edges_ilceler.csv&quot;</span>
+<span class="n">nodes_file</span> <span class="o">=</span> <span class="s2">&quot;data/production/nodes_ilceler.csv&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Verileri oku</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">read_edges</span><span class="p">(</span><span class="n">edges_file</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">read_nodes</span><span class="p">(</span><span class="n">nodes_file</span><span class="p">)</span>
+
+    <span class="c1"># Graf oluştur</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">create_graph_from_edges</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+    <span class="c1"># Ceyhan&#39;dan (41) Yüreğir&#39;e (50)</span>
+    <span class="n">start_node</span> <span class="o">=</span> <span class="s2">&quot;41&quot;</span>  <span class="c1"># Ceyhan</span>
+    <span class="n">end_node</span> <span class="o">=</span> <span class="s2">&quot;50&quot;</span>    <span class="c1"># Yüreğir</span>
+
+    <span class="c1"># En kısa yolu bul</span>
+    <span class="n">path</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">get_shortest_path</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">,</span> <span class="n">end_node</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">and</span> <span class="n">distance</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ceyhan&#39;dan Yüreğir&#39;e en kısa yol:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rota: </span><span class="si">{</span><span class="s1">&#39; -&gt; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toplam mesafe: </span><span class="si">{</span><span class="n">distance</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kilometre&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Rota üzerindeki ilçelerin isimlerini ve rakımlarını göster</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rota üzerindeki ilçeler:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="n">location_info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="s1">&#39;height&#39;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+                <span class="n">location_info</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; (Rakım: </span><span class="si">{</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">m)&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">location_info</span><span class="p">)</span>
+
+        <span class="c1"># Grafı görselleştir</span>
+        <span class="n">visualize_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yol bulunamadı!&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hata: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="loglama-ornegi">
+<h2>Loglama Örneği<a class="headerlink" href="#loglama-ornegi" title="Link to this heading"></a></h2>
+<p>Bu örnekte, detaylı loglama özelliğinin nasıl kullanılacağını göreceğiz.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shortestpath2220674052.shortestpath</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
+
+<span class="c1"># Loglama seviyesini ayarla</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>  <span class="c1"># Tüm log seviyelerini göster</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">handlers</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s1">&#39;shortestpath_detailed.log&#39;</span><span class="p">),</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Test için örnek kullanım</span>
+<span class="n">edges_file</span> <span class="o">=</span> <span class="s2">&quot;data/test/edges.csv&quot;</span>
+<span class="n">nodes_file</span> <span class="o">=</span> <span class="s2">&quot;data/test/nodes.csv&quot;</span>
+<span class="n">start_node</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="n">end_node</span> <span class="o">=</span> <span class="s2">&quot;G&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">path</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">edges_file</span><span class="p">,</span> <span class="n">nodes_file</span><span class="p">,</span> <span class="n">start_node</span><span class="p">,</span> <span class="n">end_node</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">and</span> <span class="n">distance</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">En kısa yol bulundu:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rota: </span><span class="si">{</span><span class="s1">&#39; -&gt; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toplam mesafe: </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2"> metre&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yol bulunamadı!&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Program çalışırken hata oluştu: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hata: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bu örnekte oluşturulan log dosyası (<cite>shortestpath_detailed.log</cite>) şu tür bilgileri içerecektir:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2024-03-14 10:30:15,123 - shortestpath2220674052 - INFO - Program başlatıldı: A -&gt; G
+2024-03-14 10:30:15,124 - shortestpath2220674052 - INFO - Kenar bilgileri okunuyor: edges.csv
+2024-03-14 10:30:15,125 - shortestpath2220674052 - DEBUG - Yeni düğüm eklendi: A
+2024-03-14 10:30:15,126 - shortestpath2220674052 - DEBUG - Kenar eklendi: A -&gt; B (Ağırlık: 9)
+2024-03-14 10:30:15,127 - shortestpath2220674052 - INFO - En kısa yol bulundu: A -&gt; B -&gt; C -&gt; G
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API Referansı" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Önceki</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Sürüm Geçmişi" accesskey="n" rel="next">Sonraki <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Zeynep Oğulcan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    kullanılarak <a href="https://readthedocs.org">Read the Docs</a> tarafından sağlanmasıyla oluşturuldu.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

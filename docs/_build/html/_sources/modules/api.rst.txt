@@ -1,26 +1,7 @@
-API Dokümantasyonu
-================
+API Referansı
+============
 
-ShortestPath Sınıfı
------------------
-
-.. autoclass:: shortestpath2220674052.ShortestPath
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Metodlar
--------
-
-.. automethod:: shortestpath2220674052.ShortestPath.__init__
-
-.. automethod:: shortestpath2220674052.ShortestPath.load_from_csv
-
-.. automethod:: shortestpath2220674052.ShortestPath.find_shortest_path
-
-.. automethod:: shortestpath2220674052.ShortestPath.visualize_graph
-
-.. automethod:: shortestpath2220674052.ShortestPath.visualize_path
+Bu bölümde paketin tüm fonksiyonlarının detaylı açıklamalarını bulabilirsiniz.
 
 Graf İşlemleri
 ------------
