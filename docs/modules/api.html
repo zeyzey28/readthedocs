@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="tr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Referansı &mdash; ShortestPath2220674052 0.1.4 belgelendirmesi</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6861fbf"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=b0f24d8d"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="Örnekler" href="examples.html" />
+    <link rel="prev" title="Kullanım" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ShortestPath2220674052
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Belgeleri arayın" aria-label="Belgeleri arayın" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">İçindekiler:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Kurulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Kullanım</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Referansı</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graf-islemleri">Graf İşlemleri</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.create_graph_from_edges"><code class="docutils literal notranslate"><span class="pre">create_graph_from_edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.dijkstra"><code class="docutils literal notranslate"><span class="pre">dijkstra()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.get_shortest_path"><code class="docutils literal notranslate"><span class="pre">get_shortest_path()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dosya-islemleri">Dosya İşlemleri</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.read_edges"><code class="docutils literal notranslate"><span class="pre">read_edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.read_nodes"><code class="docutils literal notranslate"><span class="pre">read_nodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gorsellestirme">Görselleştirme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.visualize_graph"><code class="docutils literal notranslate"><span class="pre">visualize_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ana-program">Ana Program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shortestpath2220674052.shortestpath.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Örnekler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Sürüm Geçmişi</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ShortestPath2220674052</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Referansı</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/api.rst.txt" rel="nofollow"> Sayfa kaynağını görüntüle</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-referansi">
+<h1>API Referansı<a class="headerlink" href="#api-referansi" title="Link to this heading"></a></h1>
+<p>Bu bölümde paketin tüm fonksiyonlarının detaylı açıklamalarını bulabilirsiniz.</p>
+<section id="graf-islemleri">
+<h2>Graf İşlemleri<a class="headerlink" href="#graf-islemleri" title="Link to this heading"></a></h2>
+<p id="module-shortestpath2220674052.shortestpath">Shortest Path Algorithm Implementation using Dijkstra’s algorithm.
+This module provides functions to find the shortest path between nodes in a graph.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.create_graph_from_edges">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">create_graph_from_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#create_graph_from_edges"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.create_graph_from_edges" title="Link to this definition"></a></dt>
+<dd><p>Creates a graph from a list of edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>edges</strong> – A list of tuples (node1, node2, weight) representing the edges.</p>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary representing the graph.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.dijkstra">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">dijkstra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#dijkstra"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.dijkstra" title="Link to this definition"></a></dt>
+<dd><p>Implements Dijkstra’s algorithm to find shortest paths from a starting node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> – A dictionary representing the graph where keys are nodes and values are dictionaries
+of neighboring nodes and their edge weights.</p></li>
+<li><p><strong>start</strong> – The starting node.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>A dictionary of shortest distances from start to each node.</p></li>
+<li><p>A dictionary of predecessors for each node.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Dönüş türü<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.get_shortest_path">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">get_shortest_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#get_shortest_path"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.get_shortest_path" title="Link to this definition"></a></dt>
+<dd><p>Finds the shortest path between start and end nodes in a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> – A dictionary representing the graph.</p></li>
+<li><p><strong>start</strong> – The starting node.</p></li>
+<li><p><strong>end</strong> – The destination node.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>The shortest path as a list of nodes (None if no path exists).</p></li>
+<li><p>The total distance of the path (None if no path exists).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Dönüş türü<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="dosya-islemleri">
+<h2>Dosya İşlemleri<a class="headerlink" href="#dosya-islemleri" title="Link to this heading"></a></h2>
+<p id="module-0">Shortest Path Algorithm Implementation using Dijkstra’s algorithm.
+This module provides functions to find the shortest path between nodes in a graph.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.read_edges">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">read_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#read_edges"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.read_edges" title="Link to this definition"></a></dt>
+<dd><p>CSV dosyasından kenar bilgilerini okur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – edges.csv dosyasının yolu</p>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p>(başlangıç_nokta, bitiş_nokta, mesafe) şeklinde kenarların listesi</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.read_nodes">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">read_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#read_nodes"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.read_nodes" title="Link to this definition"></a></dt>
+<dd><p>CSV dosyasından düğüm bilgilerini okur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – nodes.csv dosyasının yolu</p>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p>Düğüm bilgilerini içeren sözlük</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="gorsellestirme">
+<h2>Görselleştirme<a class="headerlink" href="#gorsellestirme" title="Link to this heading"></a></h2>
+<p id="module-1">Shortest Path Algorithm Implementation using Dijkstra’s algorithm.
+This module provides functions to find the shortest path between nodes in a graph.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.visualize_graph">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">visualize_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortest_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#visualize_graph"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.visualize_graph" title="Link to this definition"></a></dt>
+<dd><p>Grafı ve en kısa yolu görselleştirir.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> – Graf yapısı</p></li>
+<li><p><strong>nodes</strong> – Düğüm bilgileri</p></li>
+<li><p><strong>shortest_path</strong> – En kısa yol (varsa)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="ana-program">
+<h2>Ana Program<a class="headerlink" href="#ana-program" title="Link to this heading"></a></h2>
+<p id="module-2">Shortest Path Algorithm Implementation using Dijkstra’s algorithm.
+This module provides functions to find the shortest path between nodes in a graph.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shortestpath2220674052.shortestpath.main">
+<span class="sig-prename descclassname"><span class="pre">shortestpath2220674052.shortestpath.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/shortestpath2220674052/shortestpath.html#main"><span class="viewcode-link"><span class="pre">[kaynak]</span></span></a><a class="headerlink" href="#shortestpath2220674052.shortestpath.main" title="Link to this definition"></a></dt>
+<dd><p>Ana fonksiyon - CSV dosyalarını okur ve en kısa yolu bulur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametreler<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges_file</strong> – Kenar bilgilerini içeren CSV dosyasının yolu</p></li>
+<li><p><strong>nodes_file</strong> – Düğüm bilgilerini içeren CSV dosyasının yolu</p></li>
+<li><p><strong>start_node</strong> – Başlangıç noktası</p></li>
+<li><p><strong>end_node</strong> – Bitiş noktası</p></li>
+</ul>
+</dd>
+<dt class="field-even">Dönüşler<span class="colon">:</span></dt>
+<dd class="field-even"><p>En kısa yol ve toplam mesafe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Kullanım" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Önceki</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Örnekler" accesskey="n" rel="next">Sonraki <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Zeynep Oğulcan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    kullanılarak <a href="https://readthedocs.org">Read the Docs</a> tarafından sağlanmasıyla oluşturuldu.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

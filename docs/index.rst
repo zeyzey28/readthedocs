@@ -16,6 +16,7 @@ ShortestPath2220674052, kampüs içi ve Türkiye'deki ilçeler arası en kısa y
    modules/usage
    modules/api
    modules/examples
+   modules/changelog
 
 Özellikler
 ----------
