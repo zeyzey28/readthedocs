@@ -1,16 +1,20 @@
+# Read the Docs konfigürasyon dosyası
 version: 2
 
+# İşletim sistemi ve Python sürümü ayarları
 build:
   os: ubuntu-22.04
   tools:
-    python: '3.8'
+    python: "3.8"
 
+# Sphinx dokümantasyon ayarları
 sphinx:
   configuration: docs/conf.py
   fail_on_warning: false
 
+# Python bağımlılıkları
 python:
   install:
     - method: pip
       path: .
-    - requirements: docs/requirements.txt
+    - requirements: docs/requirements.txt # Force rebuild Sat Jun  7 23:56:47 +03 2025
